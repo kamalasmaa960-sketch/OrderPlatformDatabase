@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Orderly — منصة الطلبات والتوصيل</title>
+<meta name="description" content="منصة طلبات وتوصيل حديثة وسريعة.">
+<meta name="theme-color" content="#7c3aed">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div id="app">
+<header class="topbar">
+  <a class="brand" href="/"><span class="brandmark">O</span><span id="brandName">Orderly</span></a>
+  <div class="search"><span>⌕</span><input id="search" placeholder="ابحث عن متجر أو منتج..." /></div>
+  <button class="iconBtn" id="cartBtn">🛒 <b id="cartCount">0</b></button>
+  <button class="primary" id="loginBtn">تسجيل الدخول</button>
+</header>
+<main>
+<section class="hero">
+  <div><span class="eyebrow">توصيل أسهل • أسرع • أذكى</span><h1>اطلب كل ما تحتاجه <span>بسهولة</span></h1><p>اكتشف المتاجر والمنتجات القريبة منك، وأكمل طلبك وتابع حالته لحظة بلحظة.</p><div class="heroSearch"><input id="heroSearch" placeholder="ماذا تريد اليوم؟"><button class="primary" onclick="doSearch()">بحث</button></div></div>
+  <div class="heroCard"><div class="pulse"></div><div class="miniOrder"><b>طلبك في الطريق</b><span>المندوب متجه إليك الآن</span><strong>● ● ● ✓</strong></div></div>
+</section>
+<section><div class="sectionHead"><div><span class="eyebrow">اكتشف</span><h2>التصنيفات</h2></div></div><div id="categories" class="chips"></div></section>
+<section><div class="sectionHead"><div><span class="eyebrow">اختياراتنا</span><h2>المتاجر</h2></div><button class="ghost" onclick="loadStores()">عرض الكل</button></div><div id="stores" class="grid"></div></section>
+<section><div class="sectionHead"><div><span class="eyebrow">منتجات</span><h2>الأكثر طلبًا</h2></div></div><div id="products" class="grid products"></div></section>
+<section class="how"><div><span class="eyebrow">بسيطة</span><h2>كيف تعمل المنصة؟</h2></div><div class="steps"><article><i>1</i><b>اختر المتجر</b><span>تصفح المتاجر والمنتجات.</span></article><article><i>2</i><b>أضف للسلة</b><span>اختر الكميات والإضافات.</span></article><article><i>3</i><b>أكد الطلب</b><span>اختر العنوان وطريقة الدفع.</span></article><article><i>4</i><b>تابع التوصيل</b><span>تابع الحالة مباشرة.</span></article></div></section>
+</main>
+<nav class="bottom"><button onclick="scrollTo(0,0)">⌂<small>الرئيسية</small></button><button onclick="document.querySelector('#stores').scrollIntoView()">▦<small>المتاجر</small></button><button onclick="openCart()">🛒<small>السلة</small></button><button onclick="openLogin()">◉<small>حسابي</small></button></nav>
+<div id="modal" class="modal hidden"><div class="modalBox"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
+</div>
+<script src="/app.js"></script>
+</body></html>
